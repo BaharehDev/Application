@@ -1,1 +1,1 @@
-INSERT INTO "user_obj" (user_id, email_adress, password, phone, username) VALUES (4400, null, null, null, 'az')
+INSERT INTO customer (user_id, email, password, phone, username) VALUES (4400, null, null, null, 'az')

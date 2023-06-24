@@ -1,6 +1,6 @@
 package com.example.controller;
 
-import com.example.Model.UserObj;
+import com.example.Model.Customer;
 import com.example.advertisementRepo.UserRepo;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -17,8 +17,8 @@ public class UserController {
     }
 
     @PostMapping("/save")
-    public String saveUser(@ModelAttribute("user") UserObj userObj){
-        userRepo.save(userObj);
+    public String saveUser(@ModelAttribute("user") Customer customer){
+        userRepo.save(customer);
         return "user";
     }
 }

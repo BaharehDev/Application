@@ -1,6 +1,6 @@
 package com.example.Service;
 
-import com.example.Model.UserObj;
+import com.example.Model.Customer;
 import com.example.advertisementRepo.UserRepo;
 import com.example.exception.ResourceNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,7 +13,7 @@ public class UserObjService {
     private UserRepo repo;
 
 
-    public UserObj getUserById(Long id) {
+    public Customer getUserById(Long id) {
         return repo.findByUserId(id)
                 .orElseThrow(() ->
                         new ResourceNotFoundException(String.format("User with id %d Not found" + id))

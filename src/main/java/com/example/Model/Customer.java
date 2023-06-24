@@ -7,17 +7,15 @@ import java.util.List;
 
 @Entity
 @Data
-@NoArgsConstructor(access = AccessLevel.PROTECTED, force = true)
+@NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class UserObj {
-
-    private static final long serialVersionUID = 1L;
+public class Customer {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long userId;
-    private String emailAdress;
+    private String email;
     private String username;
     private String password;
     private String phone;
