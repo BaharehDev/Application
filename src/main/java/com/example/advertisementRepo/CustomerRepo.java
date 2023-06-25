@@ -7,7 +7,8 @@ import org.springframework.stereotype.Repository;
 import java.util.Optional;
 
 @Repository
-public interface UserRepo extends CrudRepository<Customer, Long> {
+public interface CustomerRepo extends CrudRepository<Customer, Integer> {
 
-    Optional<Customer> findByUserId(Long id);
+    Optional<Customer> findByUserId(int id);
+
 }

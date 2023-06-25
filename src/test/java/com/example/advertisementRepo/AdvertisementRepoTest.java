@@ -3,7 +3,6 @@ package com.example.advertisementRepo;
 import com.example.Model.Advertisement;
 import com.example.Model.AdvertisementType;
 import com.example.Model.CategoryType;
-import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,7 +10,6 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit.jupiter.SpringJUnitConfig;
 
 import java.util.Date;
-import java.util.List;
 import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -25,14 +23,13 @@ class AdvertisementRepoTest {
     public static final AdvertisementType ADVERTISEMENT_TYPE = AdvertisementType.MEMBER;
     public static CategoryType CATEGORY_TYPE = CategoryType.GAMING_AND_ENTERTAINMENT;
     public static Date DATE_TEST;
-    public static final Long SALES = 500L;
     private Advertisement savedAdvertisement;
     private final Advertisement actual = new Advertisement(ADS_TITLE, ADS_PRICE, ADS_OWNER, ADVERTISEMENT_TYPE, CATEGORY_TYPE, DATE_TEST);
 
     @Autowired
     AdvertisementRepo sut;
     @Autowired
-    UserRepo repo;
+    CustomerRepo repo;
 
 
 

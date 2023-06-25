@@ -29,11 +29,14 @@ public class AdsController {
     public List<Advertisement> advertisementList() throws NotFoundAdvertisementException {
         return advertisementService.findAllAdvertisements();
     }
+    @RequestMapping("/{id}")
+    public Advertisement getAdsById(@PathVariable("id") Long id){
+        return advertisementService.findAdsById(id);
+    }
 
     @PostMapping("/save")
     public Advertisement saveAdvertisement(@RequestBody Advertisement advertisement) throws NotSavedAdvertisementException {
-        return advertisementService.saveAdvertisement();
-
+        return advertisementService.saveAdvertisement(advertisement);
     }
 
 
