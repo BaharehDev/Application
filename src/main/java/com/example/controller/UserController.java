@@ -16,5 +16,9 @@ public class UserController {
         this.customerRepo = customerRepo;
     }
 
-
+    @PostMapping("/save")
+    public String saveUser(@ModelAttribute("user") Customer customer){
+        customerRepo.save(customer);
+        return "user";
+    }
 }
