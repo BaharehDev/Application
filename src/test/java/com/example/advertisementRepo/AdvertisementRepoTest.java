@@ -1,7 +1,7 @@
 package com.example.advertisementRepo;
 
 import com.example.Model.Advertisement;
-import com.example.Model.AdvertisementType;
+import com.example.Model.DiscountType;
 import com.example.Model.CategoryType;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -20,11 +20,15 @@ class AdvertisementRepoTest {
     public static final String ADS_TITLE = new String(" ");
     public static final Integer ADS_PRICE = 100;
     public static final String ADS_OWNER = new String(" ");
-    public static final AdvertisementType ADVERTISEMENT_TYPE = AdvertisementType.MEMBER;
+    public static final DiscountType ADVERTISEMENT_TYPE = DiscountType.MEMBER;
     public static CategoryType CATEGORY_TYPE = CategoryType.GAMING_AND_ENTERTAINMENT;
     public static Date DATE_TEST;
     private Advertisement savedAdvertisement;
     private final Advertisement actual = new Advertisement(ADS_TITLE, ADS_PRICE, ADS_OWNER, ADVERTISEMENT_TYPE, CATEGORY_TYPE, DATE_TEST);
+
+    private Advertisement advertisement;
+
+
 
     @Autowired
     AdvertisementRepo sut;
@@ -36,7 +40,7 @@ class AdvertisementRepoTest {
     @BeforeEach
     void should_add_a_new_advertisement() {
         System.out.println("Add a new advertisement");
-        Advertisement advertisement = new Advertisement("Keyboard", 500, "Webhallen", AdvertisementType.DISCOUNT, CategoryType.COMPUTER_PRODUCTS, new Date(23 - 07 - 17));
+        Advertisement advertisement = new Advertisement("Keyboard", 500, "Webhallen", DiscountType.DISCOUNT, CategoryType.COMPUTER_PRODUCTS, new Date(23 - 07 - 17));
         savedAdvertisement = sut.save(advertisement);
     }
 
@@ -87,8 +91,8 @@ class AdvertisementRepoTest {
 
     @Test
     void getAdvertisementType() {
-        AdvertisementType advertisementType = savedAdvertisement.getAdvertisementType();
-        System.out.println(" advertisement advertisementType------> " + advertisementType);
+        DiscountType discountType = savedAdvertisement.getDiscountType();
+        System.out.println(" advertisement advertisementType------> " + discountType);
     }
 
 

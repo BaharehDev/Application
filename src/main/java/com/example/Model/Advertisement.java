@@ -25,7 +25,7 @@ public class Advertisement {
     private String owner;
     //private Date createAt = new Date();
     @Enumerated(EnumType.STRING)
-    private AdvertisementType advertisementType;
+    private DiscountType discountType;
     @Enumerated(EnumType.STRING)
     private CategoryType categoryType;
     @Temporal(TemporalType.DATE)
@@ -33,15 +33,6 @@ public class Advertisement {
 /*    @Column(name = "sales")
     private Long sales;*/
 
-    public Advertisement(String title, Integer price, String owner, AdvertisementType advertisementType, CategoryType categoryType, Date expireDateOffer) {
-        this.title = title;
-        this.price = price;
-        this.owner = owner;
-        this.advertisementType = advertisementType;
-        this.categoryType = categoryType;
-        this.expireDateOffer = expireDateOffer;
-
-    }
 
 /*   @OneToOne
     private Product products;*/
