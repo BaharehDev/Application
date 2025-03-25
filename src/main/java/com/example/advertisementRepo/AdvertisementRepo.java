@@ -10,6 +10,7 @@ import java.util.List;
 @Repository
 public interface AdvertisementRepo extends CrudRepository<Advertisement, Long> {
 
+
  /*   @Query("SELECT a FROM Advertisement a ORDER BY a.sales DESC")
     List<Advertisement> findMostSoldProducts();*/
 
